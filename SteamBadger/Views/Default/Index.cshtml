@@ -1,0 +1,15 @@
+﻿@model SteamAPI.ModelViews.Other.getTopUnfinishedAchievmentsViewModel
+@{
+    ViewBag.Title = "Index";
+    var achievements = Model.achievments;
+    var ACHIEVMENT_LIMIT = 10;
+}
+
+<h2>Default Index</h2>
+@for (var i_achievment = 0; i_achievment < achievements.Count && i_achievment < ACHIEVMENT_LIMIT; i_achievment++) {
+    <label>API Name:</label> <span>@achievements[i_achievment].name</span> <br />
+    <label>Achieved:</label> <span>@achievements[i_achievment].percentAchieved</span> <br />
+    <label>Steam App:</label> <span>@achievements[i_achievment].steamApp.name</span> <br />
+    <label>Steam App ID:</label> <span>@achievements[i_achievment].steamApp.ID</span> <br />
+    <br />
+}
